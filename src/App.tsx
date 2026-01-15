@@ -1,14 +1,26 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
 import Home from "./Pages/home/Home"
+import Login from "./Pages/login/Login"
+import Cadastro from "./Pages/cadastro/Cadastro"
 
 
 function App() {
 	return (
 		<>
-			<Navbar/>
-			<Home />
-			<Footer/>
+			<BrowserRouter>
+				<Navbar />
+				<div className="min-h-[80vh]">
+				<Routes>
+					<Route path="/" element={<Login />}/>
+					<Route path="/home" element={<Home />}/>
+					<Route path="/cadastro" element={<Cadastro />}/>
+					
+				</Routes>
+				</div>
+				<Footer />
+			</BrowserRouter>
 
 		</>
 	)
