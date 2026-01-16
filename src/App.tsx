@@ -1,27 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
-import Footer from "./components/footer/Footer"
-import Navbar from "./components/navbar/Navbar"
-import Home from "./Pages/home/Home"
-import Login from "./Pages/login/Login"
-import Cadastro from "./Pages/cadastro/Cadastro"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Footer from './components/footer/Footer'
+import Navbar from './components/navbar/Navbar'
+import { AuthProvider } from './contexts/AuthContext'
+import Login from './Pages/login/Login'
+import Home from './Pages/home/Home'
+import Cadastro from './Pages/cadastro/Cadastro'
 
 
 function App() {
 	return (
 		<>
-			<BrowserRouter>
-				<Navbar />
-				<div className="min-h-[80vh]">
-				<Routes>
-					<Route path="/" element={<Login />}/>
-					<Route path="/home" element={<Home />}/>
-					<Route path="/cadastro" element={<Cadastro />}/>
-					
-				</Routes>
-				</div>
-				<Footer />
-			</BrowserRouter>
-
+			<AuthProvider>
+				<BrowserRouter>
+					<Navbar />
+					<div className="min-h-[80vh]">
+						<Routes>
+							<Route path="/" element={<Login />} />
+							<Route path="/home" element={<Home />} />
+							<Route path="/cadastro"	element={<Cadastro />}/>
+						</Routes>
+					</div>
+					<Footer />
+				</BrowserRouter>
+			</AuthProvider>
 		</>
 	)
 }
