@@ -5,6 +5,7 @@ import { AuthProvider } from './contexts/AuthContext'
 import Login from './Pages/login/Login'
 import Home from './Pages/home/Home'
 import Cadastro from './Pages/cadastro/Cadastro'
+import ListaTemas from './components/tema/listatemas/ListaTemas'
 
 
 function App() {
@@ -17,7 +18,8 @@ function App() {
 						<Routes>
 							<Route path="/" element={<Login />} />
 							<Route path="/home" element={<Home />} />
-							<Route path="/cadastro"	element={<Cadastro />}/>
+							<Route path="/cadastro" element={<Cadastro />} />
+							<Route path="/temas" element={<ListaTemas />} />
 						</Routes>
 					</div>
 					<Footer />
