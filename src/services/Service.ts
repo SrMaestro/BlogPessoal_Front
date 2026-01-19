@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: 'https://blogpessoal.onrender.com'
+    baseURL: 'https://blogpessoal-ed58.onrender.com'
 })
 
 export const cadastrarUsuario = async (url: string, dados: Object, setDados: Function) => {
@@ -27,4 +27,8 @@ export const cadastrar = async (url: string, dados: Object, setDados: Function, 
 export const atualizar = async (url: string, dados: Object, setDados: Function, header: Object) => {
     const resposta = await api.put(url, dados, header)
     setDados(resposta.data)
+}
+
+export const deletar = async (url: string, header: Object) => {
+    await api.delete(url, header)
 }
