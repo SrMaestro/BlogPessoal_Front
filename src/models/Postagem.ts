@@ -7,7 +7,7 @@ export default interface postagem{
     id: number
     titulo: string
     texto: string
-    data: string
+    date: string
     tema: Tema | null
     usuario: Usuario | null
 }
