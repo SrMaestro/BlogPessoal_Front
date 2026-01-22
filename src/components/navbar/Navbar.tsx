@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -8,6 +9,7 @@ function Navbar() {
 
   function sair() {
     handleLogout();
+    ToastAlerta('O Usuário foi desconectado com sucesso!', 'info')
     navigate("/");
   }
 
@@ -32,7 +34,7 @@ function Navbar() {
             <Link to="/cadastrartema" className="hover:underline">
               Cadastrar tema
             </Link>
-            Perfil
+            <Link to='/perfil' className='hover:underline'>Perfil</Link>
             <Link to="" onClick={sair} className="hover:underline">
               {" "}
               Sair{" "}
